@@ -1,0 +1,269 @@
+:root{
+    --prime: rgb(255, 70, 70);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: bolder;
+    font-size: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: black;
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("red_fluid.png");
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+}
+
+#silly{
+    position: fixed;
+    z-index: -1;
+    color: white;
+}
+
+
+#backlink{
+    height: 60px;
+    width: 100%;
+}
+#next{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: black;
+}
+#innext{
+    height: 100%;
+    width: 0%;
+    background-color: var(--prime);
+    overflow: visible;
+    transition: width 0.5s;
+    transition-timing-function: ease;
+}
+#arrow{
+    position: absolute;
+    left: 50vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 40px;
+    width: 80px;
+    z-index: 1;
+    background-color: var(--prime);
+    clip-path: polygon(100% 20%, 40% 20%, 40% 0%, 0% 50%, 40% 100%, 40% 80%, 100% 80%);
+    transition: background-color 0.5s;
+    transition-timing-function: steps(1);
+}
+#next:hover > #innext{
+    width: 100%;
+}
+#next:hover > #innext > #arrow{
+    background-color: black;
+}
+
+
+
+#firstbox{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#mainbox{
+    width: 95%;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: var(--prime);
+    filter: drop-shadow(0 20px 0 black);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+#firsttext{
+    max-width: 500px;
+    height: fit-content;
+    padding: 30px;
+    border-radius: 30px;
+    margin: 30px;
+    font-size: 1.5em;
+    background-color: var(--prime);
+    filter: drop-shadow(0 20px 0 black);
+}
+#bigtext{
+    width: 90vh;
+    transform: rotate(90deg);
+    color: var(--prime);
+    font-size: 300px;
+    word-break: keep-all;
+    filter: drop-shadow(20px 0 0 black);
+}
+@media screen and (max-width: 1100px) {
+  #firsttext{
+    display: none;
+  }
+  #bigtext{
+    font-size: 250px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #bigtext{
+    font-size: 200px;
+  }
+}
+#text2{
+    width: 90%;
+    max-width: calc(100vw - 100px);
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 30px;
+    margin: 40px;
+    background-color: black;
+    color: var(--prime)
+}
+#movesintro{
+    margin: 5px;
+    color: black;
+    font-size: 1.25em;
+}
+#moves{
+    width: 90%;
+    max-width: calc(100vw - 100px);
+    margin-bottom: 30px;
+    background-image: url("black_pattern.png");
+    background-size: contain;
+    background-position-y: -1px;
+}
+#movestable{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border-collapse: collapse;
+    color: white;
+}
+#movestable > tbody > tr{
+    background-color: var(--prime);
+    color: black;
+    transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+#movestable > tbody > tr:hover{
+    background-color: transparent;
+    color: white;
+    transform: translate(25px);
+}
+#movestable > tbody > tr > td{
+    padding: 15px;
+    border: 10px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.8em;
+}
+#movestable > tbody > tr > td:first-child{
+    width: 30%;
+    font-size: 1.25em;
+}
+#endgrid{
+    height: 900px;
+    width: 95%;
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#endbox1{
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background-image: url("black_pattern.png");
+    background-size: contain;
+    background-position-y: -1px;
+    filter: drop-shadow(0 20px 0 black);
+
+}
+#endbox2{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+#endbox3{
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: var(--prime);
+    filter: drop-shadow(0 20px 0 black);
+}
+#endbox4{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+#endbox5{
+    width: 48%;
+    border-radius: 30px;
+    background-image: url("red_pattern.png");
+    filter: drop-shadow(0 20px 0 black);
+}
+#endbox6{
+    width: 48%;
+    border: 5px solid var(--prime);
+    border-radius: 30px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 20px 0 var(--prime));
+    transition: border-color 0.25s;
+}
+#endbox6:hover{
+    border-color: white;
+}
+#endbox6:active{
+    transform: translate(0, 20px);
+    filter: drop-shadow(0 0 0 black);
+}
+#endbox6 > div{
+    height: 8vw;
+    width: 80%;
+    clip-path: polygon(100% 25%, 35% 25%, 35% 0%, 0% 50%, 35% 100%, 35% 75%, 100% 75%);
+    background-color: var(--prime);
+    transition: 0.25s;
+}
+#endbox6:hover > div{
+    background-color: white;
+}
+
+@media screen and (max-width: 1500px) {
+    #endbox2{
+        font-size: 0.75em;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #endbox2{
+        font-size: 0.5em;
+    }
+}
+@media screen and (max-width: 700px) {
+    #endgrid{
+        height: 900px;
+    }
+}

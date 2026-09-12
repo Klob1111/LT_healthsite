@@ -1,0 +1,269 @@
+:root{
+    --stripes: repeating-linear-gradient(135deg, black, black 10px, rgb(19, 19, 19) 10px, rgb(19, 19, 19) 20px);
+}
+@view-transition {
+    navigation: auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+@keyframes jitter {
+    0%{background-position: 0px;}
+    100%{background-position: 0 50px;}
+}
+body{
+    background-image: url("paper.png");
+    background-size: cover;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    animation: jitter;
+    animation-duration: 2s;
+    animation-timing-function: steps(2, jump-none);
+    animation-iteration-count: infinite;
+}
+.width100{
+    width: 100%;
+}
+.row{
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content:  center;
+    align-items: center;
+}
+.collum{
+    display: flex;
+    flex-direction: collum nowrap;
+    justify-content:  center;
+    align-items: center;
+}
+.bottomSawtooth{
+    width: 100%;
+    background-color: black;
+    box-shadow: 10px 10px black;
+    clip-path: polygon(0% 0%, 10% 100%, 20% 0%, 30% 100%, 40% 0%, 50% 100%, 60% 0%, 70% 100%, 80% 0%, 90% 100%, 100% 0%);
+}
+.shapeShadow{
+    width: 100%;
+    filter: drop-shadow(-10px 10px 3px rgba(0, 0, 0, 0.75));
+}
+.topSawtooth{
+    width: 100%;
+    background-color: black;
+    clip-path: polygon(0% 100%, 10% 0%, 20% 100%, 30% 0%, 40% 100%, 50% 0%, 60% 100%, 70% 0%, 80% 100%, 90% 0%, 100% 100%);
+}
+#firstbox{
+    height: 100vh;
+    background-color: black;
+    padding: 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 180px;
+}
+#introTextTable{
+    width: 80%; 
+    margin: 30px 0;
+    margin-top: 80px;
+    border-style: none;
+    border-collapse: collapse;
+}
+#introTextTable > tbody > tr > td{
+    background-color: black;
+    color: white;
+}
+#introText{
+    padding: 20px 5px;
+    text-align: center;
+}
+#bottomRightTriangle{
+    width: 50px;
+    clip-path: polygon(0% 101%, 101% 0%, 101% 101%);
+}
+#topLeftTriangle{
+    width: 50px;
+    clip-path: polygon(-1% 100%, 100% 0%, -1% 0%);
+}
+#sectionsIntro{
+    padding: 20px;
+    padding-bottom: 7px;
+    font-size: 60px;
+    text-align: center;
+}
+.section{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: -100px;
+    padding: 0 30px;
+    display: flex;
+    overflow: clip;
+    align-items: center;
+    transition: width 0.5s;
+}
+.section:hover{
+    width: 250%;
+}
+.section > a > button{
+    min-width: 300px;
+    border: 6px solid white;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: black;
+    font-size: 45px;
+    transition: border-color 0.25s, color 0.25s, background-color 0.25s;
+}
+.section > a{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%); 
+    transition: left 0.5s;
+}
+.section:hover > a{
+    left: 180px;
+}
+.section > p{
+    position: absolute;
+    width: 22vw;
+    height: fit-content;
+    margin: 20px;
+    left: calc(100vw / 3);
+    transition: left 0.25s;
+}
+.section:hover > p{
+    left: calc(75vw / 3);
+}
+#exerciseSection{
+    background: url("red_pattern.png");
+    filter: contrast(90%);
+}
+#moveBut{
+    border-color: rgb(255, 73, 73);
+    font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: 900;
+    color: rgb(255, 73, 73);
+}
+#moveBut:hover{
+    background-color: rgb(255, 73, 73);
+    border-color: black;
+    color: black;
+}
+#moveText{
+    font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif; 
+    font-weight: 900;
+    font-size: 25px;
+}
+#foodSection{
+    background: url(leaf.png);
+}
+#foodBut{
+    border-color: rgb(115, 255, 115);
+    font-family: 'Oswald', 'Bahnschrift', sans-serif; 
+    font-weight: 100;
+    color: rgb(115, 255, 115);
+}
+#foodBut:hover{
+    background-color: rgb(115, 255, 115);
+    border-color: black;
+    color: black;
+}
+#foodText{
+    font-family: 'Oswald', 'Bahnschrift', sans-serif; 
+    font-weight: 100;
+}
+#sleepSection{
+    background: url(sky.png);
+    background-size: cover;
+    background-position-y: 60%;
+}
+#sleepBut{
+    border-color: rgb(73, 146, 255);
+    font-family: 'Georgia', sans-serif; 
+    color: rgb(73, 146, 255);
+}
+#sleepBut:hover{
+    background-color: rgb(73, 146, 255);
+    border-color: black;
+    color: black;
+}
+#sleepText{
+    font-family: 'Georgia', sans-serif; 
+}
+#text2{
+    padding: 30px;
+    border: 10px solid rgb(19, 19, 19);
+    border-width: 10px 0;
+    text-align: center;
+    background: var(--stripes);
+    color: white;
+}
+#endlink{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    background-color: black;
+    text-decoration-color: black;
+}
+#endlink > p{
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.5em;
+}
+
+#endlink:hover{
+    background-color: white;
+}
+#endlink:hover > p{
+    color: black;
+}
+@media screen and (max-width: 1200px) {
+    #firstbox{
+        font-size: 140px;
+    }
+    .section > a > button{
+        min-width: 200px;
+        font-size: 38px;
+    }
+    .section > p{
+        font-size: 0.75em;
+    }
+    .section:hover > a{
+        left: 100px;
+    }
+    #moveBut{
+        font-size: 1em;
+    }
+    #moveText{
+        font-size: 0.6em;
+    }
+}
+@media screen and (max-width: 800px) {
+    body{
+        font-size: 1.5em;
+    }
+    #firstbox{
+        font-size: 100px;
+    }
+    .section > a > button{
+        min-width: 100px;
+        font-size: 28px;
+    }
+    .section > p{
+        display: none;
+    }
+    .section:hover{
+        width: 100%;
+    }
+    .section:hover > a{
+        left: 50%;
+    }
+}
